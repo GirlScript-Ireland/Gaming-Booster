@@ -26,15 +26,15 @@ Gaming Booster is an intiative taken up the GirlScript Ireland chapter to upskil
 ### Week 1:
 
 - Opening Ceremony
-- Community Bonding 
+- Networking & Introduction
 - Download and install the [processing editor](https://processing.org/download/)
 - Understand the syntax of processing
-- Build small animations
-- Attempt to code individual components of the flappy bird -
+- Setup basics sketch of Flappy Bird
 
 ### Week 2:
 
-- Finish the complete Flappy Bird Game
+- Code Flappy Bird in Processing
+- Learn how to debug
 - Get feedback
 - Improve the design 
 - Optimize or Document the code more if possible
@@ -42,7 +42,7 @@ Gaming Booster is an intiative taken up the GirlScript Ireland chapter to upskil
 ### Week 3:
 
 - Get used to p5.js and its [online editor](https://editor.p5js.org/)
-- Create simple animations and patterns
+- Create Snake Game basic structure
 - Create the movement of the snake in different directions, random appearances of food, grid
 
 ### Week 4:  
