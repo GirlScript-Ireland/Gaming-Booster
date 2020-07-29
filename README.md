@@ -9,7 +9,7 @@ Gaming Booster is an intiative taken up the GirlScript Ireland chapter to upskil
 
 
 <h2 align = "center"> Projects to be Completed by Participants:🏗</h2>
-<p align = "center"><img src = "http://gph.is/1gJzOli" width = 50%></p>
+<p align = "center"><img src = "https://media.giphy.com/media/euuaA2cwLEUuI/giphy.gif" width = 50%></p>
 
 - Flappy Bird
 - Snake Game
