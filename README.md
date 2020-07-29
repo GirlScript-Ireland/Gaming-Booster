@@ -1,6 +1,6 @@
 
 <h1 align = "center"> GirlScript Ireland Gaming Booster</h1>
-This repository comprises the sample code and miscellaneous stuff to be used for the Gaming Booster Program 2020 by GirlScript Ireland.
+This repository contains all the work done by participants for the Gaming Booster Program 2020 by GirlScript Ireland.
 
 <h2 align = "center"> About Gaming Booster: </h2>
 <p align = "center"><img src = "assets/girlscript_ireland_logo.png" width = 20%></p>
