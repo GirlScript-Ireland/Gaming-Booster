@@ -3,7 +3,7 @@
 This repository contains all the work done by participants for the Gaming Booster Program 2020 by GirlScript Ireland.
 
 <h2 align = "center"> About Gaming Booster: </h2>
-<p align = "center"><img src = "https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width = 20%></p>
+<p align = "center"><img src = "https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width = 50%></p>
 Gaming Booster is an intiative taken up the GirlScript Ireland chapter to upskill students from all around the globe in the field of game development. It is a four week intiative that runs through the entire of August 2020. Participants from India,Ireland,Brazil,Spain,Mexico and Kazakhstan are guided to build two functionally games by the end of program. p5.js and Processing are preferred for development.
 
 
