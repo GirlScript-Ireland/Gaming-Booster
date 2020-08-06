@@ -11,3 +11,9 @@ This part of the repository is maintained by:
     * <your name here>
 
 Looking forward to a wonderful journey! :tada:
+
+**Week 1**
+* Introductions
+* How to make the most of this?
+* How to use GitHub?
+* Got started with designing our flappy bird game.
