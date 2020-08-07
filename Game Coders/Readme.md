@@ -1,6 +1,6 @@
 # This is Team GAME Coders!
 
-This repository will be tracking our team's progress in this initiative by Girlscript Ireland in the month of August!
+This repository will be tracking the team Game Coder's progress in this initiative by Girlscript Ireland in the month of August!
 
 This part of the repository is maintained by:
 
