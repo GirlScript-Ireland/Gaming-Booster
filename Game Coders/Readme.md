@@ -8,8 +8,9 @@ This part of the repository is maintained by:
 * Priyanshi Sharma - https://github.com/priyanshisharma
 
 **Mentees** 
-    * Girish Sontakke - https://github.com/girishsontakke    
-    * Vridhi Kamath - https://github.com/vridhi-vk
+* Girish Sontakke - https://github.com/girishsontakke    
+* Vridhi Kamath - https://github.com/vridhi-vk
+* Shivam Yadav - https://github.com/ExpressHermes
 
 Looking forward to a wonderful journey! :tada:
 
