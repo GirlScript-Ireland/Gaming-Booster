@@ -9,6 +9,7 @@ This part of the repository is maintained by:
 
 **Mentees** 
     * Girish Sontakke - https://github.com/girishsontakke
+    
     * Vridhi Kamath - https://github.com/vridhi-vk
 
 Looking forward to a wonderful journey! :tada:
