@@ -1,9 +1,7 @@
 Bird b;
 void setup(){
   size(400,800);
-
   b=new Bird();
-  
 }
 
 void draw(){
