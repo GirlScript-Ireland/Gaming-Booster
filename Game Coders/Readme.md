@@ -9,7 +9,7 @@ This part of the repository is maintained by:
 
 **Mentees** 
     * Girish Sontakke - https://github.com/girishsontakke
-    * <your name here>
+    * Karol Wojcik - https://github.com/karolade
 
 Looking forward to a wonderful journey! :tada:
 
