@@ -12,6 +12,7 @@ This part of the repository is maintained by:
 * Vridhi Kamath - https://github.com/vridhi-vk
 * Shivam Yadav - https://github.com/ExpressHermes
 * Karol Wojcik - https://github.com/karolade
+* Divya Rudraraju - https://github.com/its-divya
 
 Looking forward to a wonderful journey! :tada:
 
