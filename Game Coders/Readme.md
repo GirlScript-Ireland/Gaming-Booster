@@ -21,3 +21,7 @@ Looking forward to a wonderful journey! :tada:
 * How to make the most of this?
 * How to use GitHub?
 * Got started with designing our flappy bird game.
+
+**Week 2**
+* Completed Flappy bird game
+* Addressed problems faced while using GitHub
