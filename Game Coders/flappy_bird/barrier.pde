@@ -18,7 +18,7 @@ class Barrier {
   }
   
   //Detects Bird and Barrier Collisions
-  boolean hits()
+  boolean hits(Bird b)
   {
     return ((b.pos.x > x) && (b.pos.x < (x + wid))) && ((b.pos.y < (top + b.r)) || (b.pos.y > (height - bottom - b.r)));
   }
