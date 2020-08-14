@@ -3,7 +3,7 @@ Bird b;
 PVector gravity = new PVector(0, 0.5);
 
 void setup(){
-  size(480,800);
+  size(400,800);
   b=new Bird();
   
 }
