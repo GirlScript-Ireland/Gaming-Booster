@@ -1,4 +1,5 @@
 class Bird{
+
   PVector pos;
   PVector acc;
   PVector vel;
@@ -11,8 +12,12 @@ class Bird{
     acc = new PVector();
   }
   
-  void update()
-  {
+  void applyForce(PVector force) {
+    acc.add(force);
+  }
+  
+  void update() {
+    applyForce(gravity);
     pos.add(vel);
     vel.add(acc);
     vel.limit(4);
