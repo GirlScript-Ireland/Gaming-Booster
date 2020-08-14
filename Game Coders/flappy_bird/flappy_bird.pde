@@ -7,7 +7,7 @@ void setup(){
 }
 
 void draw(){
-  background(255,182,193);
+  background(142, 232, 181);
   b.update();
   b.show();
 }
