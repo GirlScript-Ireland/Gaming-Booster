@@ -6,5 +6,6 @@ void setup(){
 
 void draw(){
   background(255,182,193);
+  b.update();
   b.show();
 }
