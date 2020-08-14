@@ -16,8 +16,10 @@ class Barrier {
   {
     x -= barrier_speed;
   }
-  void show()
-  {
+  
+  void show() {
+    stroke(0,0,0);
+    strokeWeight(2);
     rect(x, 0, w, top);
     rect(x, height - bottom, w, bottom);
   }

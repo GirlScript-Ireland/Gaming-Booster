@@ -2,9 +2,9 @@ class Bird{
 
   PVector pos;
   PVector acc;
-  PVector vel;
-  
-  float r=16;
+  PVector vel;  
+
+  float r=16;  
   
   Bird() 
   {
@@ -21,9 +21,14 @@ class Bird{
   void update() 
   {
     applyForce(gravity);
-    pos.add(vel);
-    vel.add(acc);
-    vel.limit(4);
+    pos.add(vel); // in order to update  pos wrt velocity
+    if(pos.y >=height)
+    {
+        pos.y=height;
+        vel.mult(0);
+    }
+    vel.add(acc); //in order to update the vel as per acc
+    vel.limit(4); // in order to cap the vel for a smooth run
   }
   void show()
   {
