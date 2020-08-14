@@ -16,6 +16,7 @@ class Barrier {
   {
     x -= barrier_speed;
   }
+  
   //Detects Bird and Barrier Collisions
   boolean hits()
   {
@@ -32,6 +33,8 @@ class Barrier {
     {
       fill(65,224,129,127);
     }
+    stroke(0,0,0);
+    strokeWeight(2);
     rect(x, 0, w, top);
     rect(x, height - bottom, w, bottom);
   }
