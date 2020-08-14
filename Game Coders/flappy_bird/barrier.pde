@@ -10,6 +10,7 @@ class Barrier {
   }
   
   void show() {
+    fill(255,0,34);
     rect(x, 0, w, top);
     rect(x, height - bottom, w, bottom);
   }
