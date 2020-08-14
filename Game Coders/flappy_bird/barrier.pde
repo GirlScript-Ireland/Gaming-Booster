@@ -3,13 +3,21 @@ class Barrier {
   float bottom;
   float w = 40;
   float x;
+  float barrier_speed = 3;
   
-  Barrier() {
+  Barrier()
+  {
     top = random(100, height/2);
     bottom = random(100, height/2);
+    
+    x = wid + w;
   }
-  
-  void show() {
+  void update ()
+  {
+    x -= barrier_speed;
+  }
+  void show()
+  {
     rect(x, 0, w, top);
     rect(x, height - bottom, w, bottom);
   }
