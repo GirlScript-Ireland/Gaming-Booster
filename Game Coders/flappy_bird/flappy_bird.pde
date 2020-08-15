@@ -28,6 +28,22 @@ void draw(){
   b.update();
   b.show();
   
+  for(int i=barriers.size()-1; i>=0; i--){
+    Barrier p = barriers.get(i);
+    p.update();
+    if (p.hits(b))
+    {
+      p.show(true);
+    }
+    else
+    {
+      p.show(false);
+    }
+    if(p.x < -p.w)
+    {
+      barriers.remove(i);
+    }
+  }
 }
 
 
