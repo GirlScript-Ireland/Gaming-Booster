@@ -18,6 +18,8 @@ class Bird{
     acc.add(force);
   }
   
+
+
   void update() 
   {
     applyForce(gravity);
