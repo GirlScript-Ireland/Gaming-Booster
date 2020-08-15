@@ -1,5 +1,6 @@
 Bird b;
-
+int score=0;
+boolean safe=true;
 PVector gravity = new PVector(0, 0.5);
 ArrayList<Barrier> barriers = new ArrayList<Barrier>();
 int wid = 400;
@@ -34,16 +35,31 @@ void draw(){
     if (p.hits(b))
     {
       p.show(true);
+      safe=false;
     }
     else
     {
       p.show(false);
+      safe=true;
     }
     if(p.x < -p.w)
     {
       barriers.remove(i);
     }
   }
+  
+  if(safe)
+    {
+      score++;
+    }
+    else
+    {
+      score-=50;
+    }
+    fill(16,53,201);
+    textSize(64);
+    text(score,width/2,50);
+    score=constrain(score,0,score);
 }
 
 
