@@ -27,4 +27,8 @@ void draw(){
   background(142, 232, 181);
   b.update();
   b.show();
+  
 }
+
+
+  
