@@ -1,10 +1,12 @@
 Bird b; // Create an object b of the class Bird
-int wid = 800;
+float wid = 810;
 int rez = 60;
 int lim = 25;
 int lives = 0;
 int count = 0;
 int score = 0; // Intialize our score to zero
+int tempScore = 0;
+int highScore = 0;
 boolean jumping = false;
 PVector gravity = new PVector(0, 1.5);
 ArrayList<Pipe> pipes = new ArrayList<Pipe>(); // Declare an array object of the type pipes (Typically for the pipes being generated sequentially in the game)
@@ -16,7 +18,7 @@ PImage gameover; // Declare an image object for Game Over
 // This function runs only once
 void setup()
 {
-  // size(1080, 2340); // Create a canvas of width 1000 pixels and height 2130 pixels 
+  //size(1080, 2340); // Create a canvas of width 1080 pixels and height 2340 pixels 
   fullScreen();
   b = new Bird(); // Intializing our bird object
   pipes.add(new Pipe()); // Add a Pipe object to the list of pipes
@@ -32,16 +34,16 @@ void draw()
   background(0, 0, 0); // Setting the default background color to black
   image(mountain, 0, 0); // Now we put our background image
   image(logo, 250, height-170);
-  strokeWeight(4);
-  line(0, 150, width, 150);
-  strokeWeight(4);
-  line(0, height - 200, width, height - 200);
-  strokeWeight(2);
-  line(width/2, 0, width/2, 150);
-  
   if (lives==0)
   {
-    image(gameover, 43, 669);
+    image(gameover, 0, 669);
+    if(highScore/74 < score/74)
+    {
+      highScore = score;
+    }
+    text("High Score: "+highScore/74, 280, 500);
+    text("Your Score: "+score/74, 280, 600);
+    
     if(mousePressed)
     {
       delay(500);
@@ -54,7 +56,6 @@ void draw()
   {
     pipes.add(new Pipe()); 
   }
-
   if (mousePressed) // Check for a mouse input for PC or touch input for mobile
   {
     PVector up = new PVector(0, -5);  // The variable for displacement of bird object
@@ -90,20 +91,36 @@ void draw()
   {
     if (safe) // If there is no collision
     {
-      score += 1; // Increment score by +1
+      if(tempScore<=75)
+      {
+        score = 0;
+        tempScore +=1;
+      }
+      else
+      {
+        score += 1; // Increment score by +1
+      }
     } 
     else // Otherwise in case of a collision
     {
-      score -= 50; // Decrement score by a penalty of 50 (Note it is a good habit to declare the penalty has global variable)
+      score -= 75; // Decrement score by a penalty of 50 (Note it is a good habit to declare the penalty has global variable)
       count += 1; 
     }
   }
-
-  fill(25, 66, 61); // Color of the text for displaying our score (Here:Dark-Greenish)
-  textSize(80); // Size of the text for displaying our score
-  text("Score: "+score, 60, 105); // Display our score
-  score = constrain(score, 0, score);
-  text(lives+" ❤️ left", 700, 105); // Display the count of lives left
+  if(lives>0)
+  {
+    strokeWeight(4);
+    line(0, 150, width, 150);
+    strokeWeight(4);
+    line(0, height - 200, width, height - 200);
+    strokeWeight(2);
+    line(width/2, 0, width/2, 150);
+    fill(25, 66, 61); // Color of the text for displaying our score (Here:Dark-Greenish)
+    textSize(80); // Size of the text for displaying our score
+    text("Score: "+score/74, 60, 105); // Display our score
+    score = constrain(score, 0, score);
+    text(lives+" ❤️ left", 700, 105); // Display the count of lives left
+  }
 }
 
 
@@ -175,7 +192,7 @@ class Pipe
   // Constructor to Intialize our Pipe object
   Pipe() 
   {
-    x = wid + w;
+    x = wid;
     top = random(300, height - 1000); // height of the top pipe
     bottom = (height - (top + 360)); // height of the bottom pipe
     // ensures that the distance between the top and bottom pipes are the same
