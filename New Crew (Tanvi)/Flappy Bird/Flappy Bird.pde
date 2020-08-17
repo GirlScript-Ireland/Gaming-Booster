@@ -18,7 +18,7 @@ PImage gameover; // Declare an image object for Game Over
 // This function runs only once
 void setup()
 {
-  //size(1080, 2340); // Create a canvas of width 1080 pixels and height 2340 pixels 
+  // size(1080, 2340); // Create a canvas of width 1080 pixels and height 2340 pixels 
   fullScreen();
   b = new Bird(); // Intializing our bird object
   pipes.add(new Pipe()); // Add a Pipe object to the list of pipes
@@ -33,16 +33,18 @@ void draw()
 {
   background(0, 0, 0); // Setting the default background color to black
   image(mountain, 0, 0); // Now we put our background image
-  image(logo, 250, height-170);
+  image(logo, (width-552)/2, height-170);
   if (lives==0)
   {
     image(gameover, 0, 669);
-    if(highScore/74 < score/74)
+    if(highScore/75 < score/75)
     {
       highScore = score;
     }
-    text("High Score: "+highScore/74, 280, 500);
-    text("Your Score: "+score/74, 280, 600);
+    fill(25, 66, 61);
+    textSize(80);
+    text("High Score: "+highScore/75, (width-520)/2, 500);
+    text("Your Score: "+score/75, (width-520)/2, 600);
     
     if(mousePressed)
     {
@@ -58,7 +60,7 @@ void draw()
   }
   if (mousePressed) // Check for a mouse input for PC or touch input for mobile
   {
-    PVector up = new PVector(0, -5);  // The variable for displacement of bird object
+    PVector up = new PVector(0, -(height/468));  // The variable for displacement of bird object
     b.applyForce(up); // Displace the bird object up by 5 pixels
   }
   
@@ -103,7 +105,7 @@ void draw()
     } 
     else // Otherwise in case of a collision
     {
-      score -= 75; // Decrement score by a penalty of 50 (Note it is a good habit to declare the penalty has global variable)
+      //score -= 45; // Decrement score by a penalty of 50 (Note it is a good habit to declare the penalty has global variable)
       count += 1; 
     }
   }
@@ -117,9 +119,9 @@ void draw()
     line(width/2, 0, width/2, 150);
     fill(25, 66, 61); // Color of the text for displaying our score (Here:Dark-Greenish)
     textSize(80); // Size of the text for displaying our score
-    text("Score: "+score/74, 60, 105); // Display our score
+    text("Score: "+score/75, width/18, 105); // Display our score
     score = constrain(score, 0, score);
-    text(lives+" ❤️ left", 700, 105); // Display the count of lives left
+    text(lives+" ❤️ left", (width/1.5), 105); // Display the count of lives left
   }
 }
 
@@ -135,7 +137,7 @@ class Bird
   //------------------Functions of our Bird Class-----------------
   // Constructor to Intialize our Bird object
   Bird() {
-    pos = new PVector(60, 1100); // Initial position of the bird
+    pos = new PVector(width/18, height/2.13); // Initial position of the bird
     vel = new PVector(0, 0);  // Initial velocity of the bird
     acc = new PVector(); // Initial accleration of the bird
   }
@@ -151,7 +153,7 @@ class Bird
     applyForce(gravity); // The bird object is acted upon by a gravitational force that pulls it down 
     pos.add(vel); // The position of the bird is incremented by the distance travelled per unit time
     vel.add(acc); // The velocity of the bird is incremented by the change of speed per unit tiime
-    vel.limit(9.8); // The maximum speed of the bird is given a threshold of 4 ( Note here it is related to the pixels)
+    vel.limit(height/234); // The maximum speed of the bird is given a threshold of 4 ( Note here it is related to the pixels)
     acc.mult(0);
 
     if (pos.y > height-245) // If the bird tends to escape our screen
@@ -187,12 +189,12 @@ class Pipe
   float top; 
   float bottom;
   float w = 50;
-  float pipe_speed = 4.9;
+  float pipe_speed = width/216;
   //------------------Functions of our Pipe Class-----------------
   // Constructor to Intialize our Pipe object
   Pipe() 
   {
-    x = wid;
+    x = width/1.33;
     top = random(300, height - 1000); // height of the top pipe
     bottom = (height - (top + 360)); // height of the bottom pipe
     // ensures that the distance between the top and bottom pipes are the same
@@ -200,7 +202,7 @@ class Pipe
   // Check if there is any collision between the bird and the pipes 
   boolean hits(Bird b) 
   {
-    if ((b.pos.x > x) && (b.pos.x < (x + (w/2))) && (count<=lim)) // if the bird lies within the width of the pipe
+    if ((b.pos.x > x) && (b.pos.x < (x + (w/2))) && (count<=lim)) // if the bird lies within the hth of the pipe
     {
       if ((b.pos.y < (top)) || (b.pos.y > (height - bottom - 2*(b.r)))) 
         // If the bird is either below the upper pipe or above the lower pipe
