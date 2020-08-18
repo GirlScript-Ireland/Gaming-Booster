@@ -54,7 +54,7 @@ void draw(){
     }
     else
     {
-      score-=50;
+      score-=2;
     }
     fill(16,53,201);
     textSize(64);
