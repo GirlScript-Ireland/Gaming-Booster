@@ -1,6 +1,6 @@
 PImage bg;
-Float birdy=46;
-Float birdx=56;
+int birdy=46;
+float birdx=56;
 int gravity=5;
 int jumpforce=20;
 void setup()
