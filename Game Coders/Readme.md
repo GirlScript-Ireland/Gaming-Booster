@@ -25,3 +25,9 @@ Looking forward to a wonderful journey! :tada:
 **Week 2**
 * Completed Flappy bird game
 * Addressed problems faced while using GitHub
+
+**Week 3**
+* Started with the Snake Game. Covered the following:
+  * The Canvas
+  * The Snake's Head - Creation and Movement
+  * The Food - Creation and Regeneration on Eating
