@@ -4,11 +4,18 @@ let fR = 7;
 let food;
 
 function setup() {
-  createCanvas(1420,772);
+  // replaced hard coded values with relative values
+  // so that canvas fill fill whole window without overflowing
+  createCanvas(windowWidth, windowHeight);
   bg = loadImage("Background.png");
   s=new Snake();
   frameRate(fR);
   pickLocation();
+}
+
+// to make canvas fill the window when window is resized
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function pickLocation() {
@@ -36,7 +43,6 @@ function keyPressed(){
     s.dir(1,0);
   }
 }
-    
 
 function draw() {
   background(bg);
