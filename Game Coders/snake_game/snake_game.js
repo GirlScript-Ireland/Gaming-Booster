@@ -48,7 +48,10 @@ function draw() {
   background(bg);
   s.update();
   s.show();
-  
+
+  if(s.eat(food)){
+    pickLocation();
+  }
   // food display properties
   stroke(0, 0, 0);
   strokeWeight(2);
