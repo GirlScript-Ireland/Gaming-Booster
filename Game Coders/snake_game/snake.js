@@ -22,7 +22,7 @@ function Snake() {
     this.yspeed=y;
   };
   this.eat = function(pos){
-    let d = dist(this.x,this.y,po.x,pos.y);
+    let d = dist(this.x,this.y,pos.x,pos.y);
     return (d<0.5);
   };
 }
