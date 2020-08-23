@@ -46,12 +46,13 @@ function keyPressed(){
 
 function draw() {
   background(bg);
-  s.update();
-  s.show();
 
   if(s.eat(food)){
     pickLocation();
   }
+
+  s.update();
+  s.show();
   // food display properties
   stroke(0, 0, 0);
   strokeWeight(2);
