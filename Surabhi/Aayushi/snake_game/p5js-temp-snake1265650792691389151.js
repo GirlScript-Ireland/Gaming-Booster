@@ -56,12 +56,32 @@ function Snake() {
   this.show = function() {
     stroke(0,0,0);
     stroke(2);
-    fill(255);
+    fill(255, 251, 148);
     
     for(let i=0; i<this.tail.length; i++){
-      rect(this.tail[i].x, this.tail[i].y, scl, scl);
+      rect(this.tail[i].x, this.tail[i].y, scl, scl, 10);
+      
+      if(i==this.tail.length-1)
+      {
+        fill(255, 162, 0);
+      }
+      else if(i%2==0)
+      {
+        fill(255, 236, 28);
+      }
+      else
+      {
+        fill(255, 251, 148);
+      }
     }
-    rect(this.x, this.y, scl, scl);
+    //rect(this.x, this.y, scl, scl);
+    ellipse(this.x+scl/2, this.y+scl/2, scl, scl);
+    //rect(this.x+scl/2, this.y+scl/2, scl/2, scl/10, 10);
+      
+      score = this.tail.length*10;
+      fill(170, 255, 13);
+      textSize(64);
+      text(score, width/2, 75);
   };
   
 }
