@@ -3,8 +3,8 @@ let scl = 40; //scale of objects - snake and food
 let food; // food for the snake
 
 function setup() {
-  bg = loadImage('Background.png');
-  createCanvas(1440, 772);
+  bg = loadImage('snake.jpg');
+  createCanvas(1365, 615);
   s = new Snake();
   frameRate(7);
   pickLocation();
@@ -32,7 +32,8 @@ function draw() {
     stroke(0,0,0);
     stroke(2);
     fill(255, 0, 100);
-    rect(food.x, food.y, scl, scl);
+    //rect(food.x, food.y, scl, scl);
+    ellipse(food.x+scl/2, food.y+scl/2, scl, scl);
 }
 
 function keyPressed() {
