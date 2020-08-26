@@ -1,7 +1,3 @@
-// Daniel Shiffman
-// http://codingtra.in
-// http://patreon.com/codingtrain
-// Code for: https://youtu.be/AaGK-fj-BAM
 
 let bg; //background
 let s; //snake
