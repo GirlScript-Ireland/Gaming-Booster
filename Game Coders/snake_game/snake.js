@@ -20,9 +20,11 @@ function Snake() {
   this.dir=function(x,y){
     this.xspeed=x;
     this.yspeed=y;
-  };
-  this.eat = function(pos){
-    let d = dist(this.x,this.y,pos.x,pos.y);
-    return (d<0.5);
+
+  };  
+  
+  this.eat = function(pos) {
+    let d = dist(this.x, this.y, pos.x, pos.y);
+    return (d < 0.5);
   };
 }
