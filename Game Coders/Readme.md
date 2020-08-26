@@ -31,3 +31,7 @@ Looking forward to a wonderful journey! :tada:
   * The Canvas
   * The Snake's Head - Creation and Movement
   * The Food - Creation and Regeneration on Eating
+
+**Week 4**
+* Finished Snake Game
+* Discussed scope of improvement and other suggestions
