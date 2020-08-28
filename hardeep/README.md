@@ -1,6 +1,8 @@
-# Mentor : Hardeep Kaur & Minakshi
+# Flappy Bird & Snake Game Session
 
-## Mentees : 
+## Mentor : Hardeep Kaur & Minakshi
+
+### Mentees : 
                           *Apurva Raj*                                
                           *Spandana Shetty*
                           *Pavani Yarlagadda*
