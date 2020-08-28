@@ -50,7 +50,7 @@ function draw() {
   if(s.eat(food)){
     pickLocation();
   }
-
+  s.death();
   s.update();
   s.show();
   // food display properties

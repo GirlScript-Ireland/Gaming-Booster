@@ -27,4 +27,17 @@ function Snake() {
     let d = dist(this.x, this.y, pos.x, pos.y);
     return (d < 0.5);
   };
+  
+  this.death = function() {
+    for(let i = 0; i < this.tail.length; i++)
+    {
+      let pos = this.tail[i];
+      let d = dist(this.x, this.y, pos.x, pos.y);
+      if(d < 1) 
+      {
+        this.tail = [];
+        this.total = 0;
+      }
+    }
+  };
 }
