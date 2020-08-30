@@ -28,7 +28,7 @@
 * Assigned mentees the task to comment and optimise their code
 * Created Intro to P5.js slides for mentees
 
-## Week 4
+### Week 4
 * Git fundamentals (installation, what is git, git commands)
 * Mentees successfully pushed their code to their GitHubs
 * Created Intro to Git and GitHub slides for mentees
