@@ -1,25 +1,38 @@
 
+
+
 PImage bg;
 PImage b1;
-//int bgx,bgy;
+int bgx = 0;
+int bgy = 400;
 Bird b;
 int score=0;
 PVector gravity = new PVector(0,0.5);
 ArrayList<Pipe> pipes = new ArrayList<Pipe>(); //adding pipe
+
+
 void setup()
 {
-  size(400,700);
+  size(400,700);             //ERROR!! Fix: the size must be the same size as the background. If you change size(), change bg.resize() too
   bg=loadImage("e.jpg");
+  b1=loadImage("bird.png");
   bg.resize(400,700);
   b = new Bird();
- 
 }
   
 void draw(){
 
 background(bg);
-//image(bg,bgx,bgy);
-//bgx=bgx-1;
+//ERROR
+if(bgx == -400)//this resets it when one rotation is done
+{
+  bgx = 0;
+  bgy = 400;
+}
+image(bg,bgx,0); //Error fix: bgx and bgy didn't have any initial values to add/subtract with
+image(bg, bgy, 0);// added the second picture to follow the first
+bgx=bgx-1;
+bgy = bgy-1;
 boolean safe = true;
 //ellipse(200,400,32,32);
 //make pipes after every 75 frmaes
