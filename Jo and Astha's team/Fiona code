@@ -1,0 +1,127 @@
+//Fiona Spelman
+//Jo and Astha team
+
+let snake;
+let food;
+let scl = 20;
+let count = 100;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+ 
+  snake = new Snake();
+  food = new Food();
+  frameRate(5);
+}
+
+function draw() {
+  background(0, 100, 0);
+  if(snake.eat(food)) {
+    food.update();
+  }
+  if(snake.death()|| count < 100) {
+    textSize(32);
+    fill(255, 0, 100);
+    text('GAME OVER! Try Again', 10, 60);
+    count++;
+  }
+  snake.show();
+  food.show();
+  snake.update();
+}
+
+function keyPressed() {
+  if(keyCode === UP_ARROW) {
+    snake.changeDirection(0, -1); //negatively on y axis, nothing on x
+  }
+  else if(keyCode === DOWN_ARROW) {
+    snake.changeDirection(0, 1);
+  }
+  else if(keyCode === RIGHT_ARROW) {
+    snake.changeDirection(1, 0);
+  }
+  else if (keyCode === LEFT_ARROW) {
+    snake.changeDirection(-1, 0);
+  }
+}
+
+//food
+function Food() {
+  this.x = ceil(random(windowWidth)/scl)*scl;
+  this.y = ceil(random(windowHeight)/scl)*scl;
+  
+  this.update = function() {
+    this.x = ceil(random(windowWidth)/scl)*scl;
+    this.y = ceil(random(windowHeight)/scl)*scl;
+  };
+  
+  this.show = function() {
+    fill(139,69,19);
+    rect(this.x, this.y, scl, scl);
+  };
+  
+}
+//snake
+function Snake() {
+  this.x = 0;
+  this.y = 0;
+  this.xdirection = 1; //changing x coordinate positively
+  this.ydirection = 0; //not going downwards
+  this.total = 0;
+  this.tail = []; //empty array
+  
+  this.update = function() {
+    for(let i = 0; i < this.tail.length - 1; i++) {
+      this.tail[i] = this.tail[i+1]; 
+    }
+    
+    if(this.total >= 1) { //if snake moving by one
+      this.tail[this.total - 1] = createVector(this.x, this.y);
+    }
+    
+    this.x = this.x + this.xdirection * scl; //increase by one across x axis
+    this.y = this.y + this.ydirection * scl;
+    
+  };
+  
+  this.show = function() {
+    stroke(0, 0, 0);
+    strokeWeight(2);
+    fill(255);
+    for(let i = 0; i < this.tail.length; i++) {
+      rect(this.tail[i].x, this.tail[i].y, scl, scl);
+    }
+    rect(this.x, this.y, scl, scl);
+    
+  };
+   
+   this.changeDirection = function(x, y) {
+     this.xdirection = x;
+     this.ydirection = y;
+     
+   };
+   this.eat = function(food) {
+     let d = dist(this.x, this.y, food.x, food.y);
+     if(d < 0.5) {
+       this.total++; 
+       return true;
+     }
+     else {
+      return false; 
+     }
+   };
+   this.death = function() {
+     for(let i = 0; i < this.tail.length; i++) {
+       let pos = this.tail[i];
+       let d = dist(this.x, this.y, pos.x, pos.y);
+       if(d < 1) {
+         this.total = 0;
+         this.tail = [];
+         console.log('starting over');
+         count = 0;
+         return true;
+       }
+     }
+     return false;
+   };
+}
