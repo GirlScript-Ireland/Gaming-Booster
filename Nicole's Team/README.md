@@ -7,7 +7,7 @@
 
 ### Mentees
 * [Akash Satheesan](https://github.com/nicolemccabechu)
-* [Atseosi Idogho](https://github.com/nicolemccabechu)
+* [Atseosi Idogho](https://github.com/atseosi)
 * [Heianne Tachy](https://github.com/nicolemccabechu)
 
 ### Week 1
