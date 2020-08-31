@@ -67,7 +67,7 @@ void draw(){
       fill(0);
       text(s,600,20);
       
-    while(score>=22){
+    if(score>=22){
       PFont end = createFont("impact",30);
       String ss = "Press B To Activate Invincibility for 15 secs";
       fill(0);
