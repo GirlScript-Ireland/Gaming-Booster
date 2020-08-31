@@ -77,11 +77,16 @@ void draw(){
       textFont(f);
       fill(0);
       text(s,600,20);
+<<<<<<< HEAD
     if(score==22)
     {
       power=true;
     }
     if(power){
+=======
+      
+    if(score>=22){
+>>>>>>> b157c01fadaed6a42a026eaa2cf4a1a1268d2f57
       PFont end = createFont("impact",30);
       String ss = "Press B To Activate Invincibility for 15 secs";
       fill(0);
