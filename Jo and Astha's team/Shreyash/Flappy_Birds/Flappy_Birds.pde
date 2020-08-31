@@ -4,10 +4,8 @@ ArrayList<Logs> log = new ArrayList<Logs>();
 power pow_1;
 boolean flag=true;
 
-
-
 int bgx;
-boolean ch=true,inv=true;
+boolean ch=true,inv=true,power=false,t=false;
 int score=0,total_s=0;
 void setup(){
    size(720,405,P2D);
@@ -21,11 +19,24 @@ void setup(){
 
 void draw(){
   
+  //String menu = "Press Space To Start";
+  //PFont z= createFont("impact",50);
+  //textFont(z);
+  //fill(#FF1212);
+  //text(menu,150,150);
+  //if(keyPressed&&key==' ')
+  //{
+  //  t=true;
+  //}
   if(ch)
   {
-    back();
+    //if(t)
+    //{
+      back(); 
     player.display();
     player.canvas();
+    player.gravity();
+   
     String sc="Your Score- ";
      text(sc,850,50);
      
@@ -66,8 +77,11 @@ void draw(){
       textFont(f);
       fill(0);
       text(s,600,20);
-      
-    while(score>=22){
+    if(score==22)
+    {
+      power=true;
+    }
+    if(power){
       PFont end = createFont("impact",30);
       String ss = "Press B To Activate Invincibility for 15 secs";
       fill(0);
@@ -77,10 +91,11 @@ void draw(){
       {
         inv=false;
         score=0;
+        power=false;
       }
     }
-  }
   
+  }
   else
   {
     go = loadImage("./image/go.jpg");
@@ -109,15 +124,12 @@ void draw(){
   if(log.size()>6){
     log.remove(0);
   }
-  if(keyPressed)
+  if(keyPressed&&key==' ')
   {
-    if(key==' ')
-    {
       player.assend();
-    }
   }
-  else 
-    player.gravity();
+  
+    
  
 }
 
