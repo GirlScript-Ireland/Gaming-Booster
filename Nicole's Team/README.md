@@ -6,7 +6,7 @@
 * [Nicole McCabe](https://github.com/nicolemccabechu)
 
 ### Mentees
-* [Akash Satheesan](https://github.com/nicolemccabechu)
+* [Akash Satheesan](https://github.com/asatheesan)
 * [Atseosi Idogho](https://github.com/atseosi)
 * [Heianne Tachy](https://github.com/nicolemccabechu)
 
