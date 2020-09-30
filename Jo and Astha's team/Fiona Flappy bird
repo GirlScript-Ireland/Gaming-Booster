@@ -1,0 +1,134 @@
+//Fiona Spelman
+//Jo Astha team
+PImage bg;
+int bgx, bgy;
+Bird b;
+int score = 0;
+PVector gravity = new PVector(0, 0.5);
+ArrayList<Pipe> pipes = new ArrayList<Pipe>();
+
+void setup() {
+ size(500, 500);
+ bg = loadImage("bg1.png");
+ b = new Bird();
+ 
+}
+
+void draw() {      
+  image(bg, bgx, bgy);
+  image(bg, bgx + bg.width, bgy);
+  bgx = bgx - 1;
+  if(bgx < -bg.width)
+  {
+    bgx = 0;
+  }
+  
+  boolean safe = true;
+  
+  if(frameCount % 75 == 0) {
+    pipes.add(new Pipe());
+  }
+  b.show();
+  if(keyPressed) {
+    PVector up = new PVector(0, -5);
+    b.applyForce(up);
+  }
+  b.applyForce(gravity);
+  b.update();
+ 
+ for(int i = pipes.size()-1; i >=0; i--) {
+  Pipe p = pipes.get(i);
+  
+  if(p.x < -p.w) {
+    pipes.remove(i);
+  }
+  else {
+  p.update();
+  p.show(p.hits(b));
+  safe = !p.hits(b);
+  }
+ }
+ if(safe) {
+   score++;
+ }
+ else {
+   score -= 50;
+ }
+ fill(255, 0, 255);
+ textSize(60);
+ score = constrain(score, 0, score);
+ text(score, width/2, 50);
+}
+
+//Bird
+class Bird {
+  float r = 16;
+  PVector pos; //position
+  PVector vel;
+  PVector acc;
+  
+  Bird() {
+    //at beginning
+    pos = new PVector(width/2, height/2);
+    vel = new PVector(0, 0);
+    acc = new PVector(0, 0);
+  }
+  void show() {
+    ellipse(pos.x,pos.y, r*2, r*2);
+  }
+  
+  void update() {
+    pos.add(vel);
+    vel.add(acc);
+    vel.limit(4);
+    acc.mult(0);
+    
+    if(pos.y > height) {
+      pos.y = height;
+      vel.mult(0);
+    }
+    if(pos.y < 0) {
+      pos.y = 0;
+      vel.mult(0);
+    }
+  }
+  void applyForce(PVector force) {
+    acc.add(force);
+  }
+}
+
+//Pipe
+class Pipe {
+  float x;
+  float top;
+  float bottom;
+  float w = 40;
+  
+  Pipe() {
+    x = width + w;
+    top = random(100, height/2);
+    bottom = random(100, height/2);
+  }
+  void show(boolean hit) {
+    if(hit) {
+      fill(255, 0, 0);
+    }
+    else {
+      fill(255, 255, 255);
+    }
+    rect(x, 0, w, top);
+    rect(x, height - bottom, w, bottom);
+  }
+  void update() {
+    x -= 3;
+  }
+  boolean hits(Bird b) { //going to return true of false
+    if((b.pos.x > x ) && (b.pos.x < x + w)) {
+      if(!((b.pos.y > top) && (b.pos.y < (height - bottom)))) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
+}
