@@ -1,18 +1,18 @@
 function Food(){
-  this.x= random(windowWidth);
-  this.y=random(windowHeight);;
+  this.x=ceil( random(windowWidth)/scl)*scl;
+  this.y=ceil(random(windowHeight)/scl)*scl;
   
-  this.variable = function(){
-    this.x = random(windowWidth);
-    this.y = random(windowHeight);
+  this.update = function(){
+    this.x = ceil( random(windowWidth)/scl)*scl;
+    this.y = ceil(random(windowHeight)/scl)*scl;
     
   };
   
   this.show = function(){
-    fill(255,0,200);
-    rect(this.x,this.y,20,20);
+    fill(250,300,100);
+    ellipse(this.x,this.y,scl,scl);
     
     
   };
   
-};
+}

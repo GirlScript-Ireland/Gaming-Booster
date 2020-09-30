@@ -11,10 +11,17 @@ class Bird{
    acc = new PVector(0,0);
  }
  void show(){
-   ellipse(pos.x,pos.y,r*2,r*2);
+   //ellipse(pos.x,pos.y,r*2,r*2);
  
-
-    //b1=loadImage("bird.png");
+  //ERROR Fix: loadImage needs to be done in setup since we need to load it before game starts
+  //use image(image, x, y) to draw it on canvas in show()
+  
+    //b1=loadImage("bird.png"); //i have added it in comments 
+    //whenevr i try to do this it shows error , here i am trying to add
+    //real bird image.
+    image(b1, pos.x, pos.y);
+      b1.resize(60, 60);
+ 
 
  }
  void update(){
